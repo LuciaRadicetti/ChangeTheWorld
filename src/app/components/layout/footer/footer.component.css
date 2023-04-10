@@ -1,0 +1,8 @@
+.fixed-bottom{
+    position: fixed bottom;
+}
+.mat-toolbar{
+    justify-content: center;
+    font-size: 18px;
+    align-items: self-end;
+}
