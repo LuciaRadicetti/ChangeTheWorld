@@ -1,1 +1,22 @@
-<p>add-edit-hero works!</p>
+<div class="icon-back"><mat-icon [routerLink]="['/home']">reply</mat-icon></div>
+<div class="container-form">
+    <form class="form-add-edit">
+        <mat-form-field appearance="fill" class="input-form">
+            <mat-label>Name</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-form">
+            <mat-label>FullName</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-form">
+            <mat-label>Ability</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let option of listOption " [value]="option">{{option}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="container-form">
+            <button mat-stroked-button color="primary" class="button-save">SAVE</button>
+        </div>
+    </form>
+</div>

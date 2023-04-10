@@ -7,7 +7,7 @@
         <mat-label> 🔍︎ Search id</mat-label>
         <input matInput>
     </mat-form-field>
-    <button mat-raised-button color="primary" class="buttonAdd">+ Add Hero</button>
+    <button mat-raised-button color="primary" class="buttonAdd"  [routerLink]="['/hero', 0]">+ Add Hero</button>
 </div>
 <div class="table-home">
     <div class="mat-elevation-z8">
@@ -38,7 +38,7 @@
                             </button>
                         </div>
                         <div class="button-action">
-                            <button mat-fab class="edit">
+                            <button mat-fab class="edit" [routerLink]="['/hero', element.id]">
                                 <mat-icon>create</mat-icon>
                             </button>
                         </div>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-edit-hero.component.css']
 })
 export class AddEditHeroComponent {
-
+  listOption = ['volar', 'cantar', 'jugar']
 }

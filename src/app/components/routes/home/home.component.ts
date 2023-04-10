@@ -24,8 +24,8 @@ export class HomeComponent {
 }
 const ELEMENT_DATA: Heroes[] = [
   {id: 1, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 1, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 1, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 1, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 1, name: "Batman", fullName:"Batmann", ability:"volar"},
+  {id: 2, name: "Batman", fullName:"Batmann", ability:"volar"},
+  {id: 3, name: "Batman", fullName:"Batmann", ability:"volar"},
+  {id: 4, name: "Batman", fullName:"Batmann", ability:"volar"},
+  {id: 5, name: "Batman", fullName:"Batmann", ability:"volar"},
 ];

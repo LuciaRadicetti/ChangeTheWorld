@@ -1,0 +1,30 @@
+.container-form{
+    display: flex;
+    justify-content: center;
+}
+.form-add-edit{
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2rem;
+    width: 50%;
+    position: absolute;
+    top: 35%;
+    transform: translate(0, -50%);
+}
+.input-form{
+    width: 100%;
+}
+.icon-back{
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+.material-icons{
+    font-size: 40px;
+}
+.mat-icon{
+    width: 40px;
+    height: 40px;
+}
+.button-save{
+    width: 50%;
+}
