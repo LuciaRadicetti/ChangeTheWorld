@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './components/layout/layout.module';
 import { RoutesModule } from './components/routes/routes.module';
 import { MatSidenavModule } from '@angular/material/sidenav'
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +19,9 @@ import { MatSidenavModule } from '@angular/material/sidenav'
     RoutesModule,
     LayoutModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

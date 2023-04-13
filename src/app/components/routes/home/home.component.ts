@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
-import { Heroes } from 'src/app/interfaces/Heroes';
+import { MatTableDataSource, MatTableDataSourcePaginator } from '@angular/material/table';
+import { Hero } from 'src/app/interfaces/Hero';
+import { HeroesService } from '../../../services/heroes/heroes.service';
 
 @Component({
   selector: 'app-home',
@@ -11,21 +12,67 @@ import { Heroes } from 'src/app/interfaces/Heroes';
 
 
 export class HomeComponent {
-  
+
+  heroes: Array<Hero> = [];
+  heroesFilter: Array<Hero> = [];
+
   displayedColumns: string[] = ['ID', 'name', 'fullName', 'ability', 'action'];
-  dataSource = new MatTableDataSource<Heroes>(ELEMENT_DATA);
+  dataSource!: MatTableDataSource<Hero, MatTableDataSourcePaginator>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+
+  constructor(private HeroesService: HeroesService) { }
+
+  ngOnInit(): void {
+    this.getAllHeroes();
   }
-  
+
+  getAllHeroes() {
+    this.HeroesService.getAllHeroes().subscribe({
+      next: response => {
+        this.heroes = this.heroesFilter = response;
+        this.dataSource = new MatTableDataSource<Hero>(this.heroesFilter);
+        this.dataSource.paginator = this.paginator;
+      },
+      error: error => {
+        console.log(error);
+      },
+    });
+  }
+
+  getHeroId(id: number){
+    this.HeroesService.getHeroId(id).subscribe({
+      next: response => {
+        this.heroesFilter = [response]
+        this.dataSource = new MatTableDataSource<Hero>(this.heroesFilter);
+      },
+      error: error => {
+        console.log(error);
+      },
+    });
+  }
+  searchHeroId($event?: any){
+    let filter = $event.currentTarget.value || "";
+    if (!filter) {
+      this.heroesFilter = this.heroes;
+      this.dataSource = new MatTableDataSource<Hero>(this.heroesFilter);
+      return;
+    }else
+     this.getHeroId(filter)
+  }
+  searchHeroName($event?: any){
+    let filter = $event.currentTarget.value || "";
+    if (!filter) {
+      this.heroesFilter = this.heroes;
+      this.dataSource = new MatTableDataSource<Hero>(this.heroesFilter);
+      return;
+    }
+    let regex = new RegExp(filter, "i");
+    this.heroesFilter = this.heroes.filter((hero) => {
+      return regex.test(hero.name) ;
+    });
+    this.dataSource = new MatTableDataSource<Hero>(this.heroesFilter);
+  }
+
 }
-const ELEMENT_DATA: Heroes[] = [
-  {id: 1, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 2, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 3, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 4, name: "Batman", fullName:"Batmann", ability:"volar"},
-  {id: 5, name: "Batman", fullName:"Batmann", ability:"volar"},
-];

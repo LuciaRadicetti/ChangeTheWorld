@@ -11,6 +11,8 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,7 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatPaginatorModule,
     MatTableModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class RoutesModule { }

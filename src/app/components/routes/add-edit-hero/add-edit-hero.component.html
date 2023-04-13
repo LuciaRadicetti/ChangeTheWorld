@@ -1,22 +1,20 @@
 <div class="icon-back"><mat-icon [routerLink]="['/home']">reply</mat-icon></div>
-<div class="container-form">
-    <form class="form-add-edit">
-        <mat-form-field appearance="fill" class="input-form">
+<div class="d-flex justify-content-center">
+    <form class="form-add-edit" [formGroup]="formHero" (ngSubmit)="submit()">
+        <mat-form-field appearance="fill" class="w-100">
             <mat-label>Name</mat-label>
-            <input matInput>
+            <input matInput formControlName="name">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="input-form">
+        <mat-form-field appearance="fill" class="w-100">
             <mat-label>FullName</mat-label>
-            <input matInput>
+            <input matInput formControlName="fullName">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="input-form">
+        <mat-form-field appearance="fill" class="w-100">
             <mat-label>Ability</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let option of listOption " [value]="option">{{option}}</mat-option>
-            </mat-select>
+            <input matInput formControlName="ability">
         </mat-form-field>
-        <div class="container-form">
-            <button mat-stroked-button color="primary" class="button-save">SAVE</button>
+        <div class="d-flex justify-content-center">
+            <button mat-stroked-button color="primary" class="w-50">SAVE</button>
         </div>
     </form>
 </div>
