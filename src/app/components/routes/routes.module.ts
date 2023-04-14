@@ -10,8 +10,9 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatTableModule,
     MatIconModule,
-    MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    SharedModule
   ]
 })
 export class RoutesModule { }

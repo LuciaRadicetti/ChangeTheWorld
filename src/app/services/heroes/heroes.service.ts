@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Hero } from 'src/app/interfaces/Hero';
 
@@ -19,6 +20,14 @@ export class HeroesService {
 
   getHeroId(id: number): Observable<Hero> {
     return this.http.get<Hero>(`${this.url}/${id}`);
+  }
+  getHeroName(name: string): Observable<Array<Hero>>{
+    return this.getAllHeroes().pipe(map(heroes => {
+      if(name){
+        return heroes.filter(hero =>  hero.name.toLowerCase().includes(name.toLowerCase()));}
+      else 
+        return heroes
+    }))
   }
 
   add(hero: Hero): Observable<Hero> {

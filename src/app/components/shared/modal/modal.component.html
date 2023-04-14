@@ -1,0 +1,9 @@
+<h1 mat-dialog-title class="text-center">{{ dataModal.title }}</h1>
+<div mat-dialog-actions class="d-flex justify-content-center">
+    <button mat-button mat-dialog-close (cancel)="submit(false)">
+        {{ dataModal.buttonCancel }}
+    </button>
+    <button mat-raised-button mat-dialog-close cdkFocusInitial color="warn" (click)="submit(true)">
+        {{ dataModal.buttonAccept }}
+    </button>
+</div>
