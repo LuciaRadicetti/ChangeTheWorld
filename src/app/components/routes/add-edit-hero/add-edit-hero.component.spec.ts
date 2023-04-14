@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ActivatedRoute } from '@angular/router';
 
 import { AddEditHeroComponent } from './add-edit-hero.component';
 
@@ -15,7 +17,9 @@ describe('Test AddEditHeroComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ActivatedRoute,
+        HttpClient
       ]
     })
     .compileComponents();

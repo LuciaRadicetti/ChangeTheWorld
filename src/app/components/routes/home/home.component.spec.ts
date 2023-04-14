@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,7 +25,8 @@ describe('Test HomeComponent', () => {
         MatTableModule,
         MatIconModule,
         ReactiveFormsModule,
-        MatDialogModule
+        MatDialogModule,
+        HttpClient
       ]
     })
     .compileComponents();

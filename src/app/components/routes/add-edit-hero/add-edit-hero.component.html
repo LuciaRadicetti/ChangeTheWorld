@@ -3,7 +3,7 @@
     <form class="form-add-edit" [formGroup]="formHero" (ngSubmit)="submit()">
         <mat-form-field appearance="fill" class="w-100">
             <mat-label>Name</mat-label>
-            <input matInput formControlName="name">
+            <input matInput formControlName="name" appUppercase>
         </mat-form-field>
         <mat-form-field appearance="fill" class="w-100">
             <mat-label>FullName</mat-label>
