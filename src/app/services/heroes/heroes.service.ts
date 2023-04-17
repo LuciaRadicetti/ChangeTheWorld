@@ -21,17 +21,18 @@ export class HeroesService {
   getHeroId(id: number): Observable<Hero> {
     return this.http.get<Hero>(`${this.url}/${id}`);
   }
-  getHeroName(name: string): Observable<Array<Hero>>{
+  getHeroName(name: string): Observable<Array<Hero>> {
     return this.getAllHeroes().pipe(map(heroes => {
-      if(name){
-        return heroes.filter(hero =>  hero.name.toLowerCase().includes(name.toLowerCase()));}
-      else 
+      if (name) {
+        return heroes.filter(hero => hero.name.toLowerCase().includes(name.toLowerCase()));
+      }
+      else
         return heroes
     }))
   }
 
   add(hero: Hero): Observable<Hero> {
-    return this.http.post<Hero>(`${this.url}`,  hero );
+    return this.http.post<Hero>(`${this.url}`, hero);
   }
 
   update(hero: Hero): Observable<Hero> {
