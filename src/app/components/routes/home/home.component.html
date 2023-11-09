@@ -1,22 +1,22 @@
 <div class="d-md-flex d-grid justify-content-evenly mt-5 ms-0 me-5">
-    <mat-form-field appearance="fill">
-        <mat-label> 🔍︎ Search name</mat-label>
-        <input matInput (keyup)="searchHeroName($event)" (search)="searchHeroName($event)">
+    <mat-form-field color="accent" class="color--inputs" >
+        <mat-label class="text-dark"> 🔍︎ Search name</mat-label>
+        <input class="text-dark" matInput (keyup)="searchHeroName($event)" (search)="searchHeroName($event)" >
     </mat-form-field>
     <form class="d-md-flex d-grid" [formGroup]="searchForm" (ngSubmit)="getHeroId()">
         <mat-form-field appearance="fill">
-            <mat-label> 🔍︎ Search id</mat-label>
-            <input matInput formControlName="searchId" type="number">
+            <mat-label class="text-dark"> 🔍︎ Search id</mat-label>
+            <input matInput formControlName="searchId" type="number" class="text-dark">
             <button *ngIf="searchForm.value.searchId" matSuffix mat-icon-button aria-label="Clear"
-                (click)="searchForm.reset();getAllHeroes()"><mat-icon>close</mat-icon>
+                (click)="searchForm.reset();getAllHeroes()"><mat-icon class="text-dark">close</mat-icon>
             </button>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="mt-2 ms-md-2 btn" type="submit">Search Id</button>
+        <button mat-raised-button class="mt-2 ms-md-2 btn bg-warning-subtle text-danger" type="submit">Search Id</button>
     </form>
-    <button mat-raised-button color="primary" class="mt-2" [routerLink]="['/hero', 0]">+ Add Hero</button>
+    <button mat-raised-button class="mt-2 bg-warning-subtle text-danger" [routerLink]="['/hero', 0]">+ Add Hero</button>
 </div>
 <div class="mx-5 my-4">
-    <div class="mat-elevation-z8">
+    <div class="mat-elevation-z8 my-8">
         <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="ID">
                 <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -55,7 +55,7 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+        <mat-paginator [pageSizeOptions]="[2, 5, 10, 20]" showFirstLastButtons
             aria-label="Select page of periodic elements">
         </mat-paginator>
     </div>

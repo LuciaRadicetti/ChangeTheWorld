@@ -2,3 +2,42 @@
     width: 13%;
     padding: 0px;
 }
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #dbf8ed !important;
+ }
+
+ ::ng-deep .mat-mdc-table {
+    background-color: #ece0f2 !important;
+ }
+ ::ng-deep .mat-mdc-paginator {
+    background-color: #ece0f2!important;
+    color: #7c25aa !important;
+
+ }
+ ::ng-deep .mat-mdc-header-row {
+    color: #7c25aa !important;
+ }
+ ::ng-deep .mat-mdc-row {
+    color: #7c25aa !important;
+ }
+ ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: #fff3cd !important;
+ }
+ ::ng-deep .mat-mdc-dialog-container .mdc-dialog__title {
+    color: rgb(218, 33, 33)!important;
+ }
+ ::ng-deep .mat-mdc-button:not(:disabled)  {
+    color: rgb(218, 33, 33)!important;
+ }
+ ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    border-color: #7c25aa !important;
+}
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading {
+    border-color: #7c25aa !important;
+}
+::ng-deep .mat-mdc-select-value-text{
+    color: #7c25aa !important;
+}
+::ng-deep .mat-mdc-paginator-icon{
+    fill: #7c25aa!important;
+}
