@@ -1,5 +1,5 @@
 .form-add-edit{
-    border: 1px solid white;
+    border: 1px solid rgb(219, 161, 161);
     border-radius: 4px;
     padding: 2rem;
     width: 50%;
@@ -16,3 +16,6 @@
     width: 40px;
     height: 40px;
 }
+.text--edit ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #e5b4ff !important;
+ }

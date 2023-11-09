@@ -1,15 +1,15 @@
-<div class="icon-back"><mat-icon [routerLink]="['/home']">reply</mat-icon></div>
+<div class="icon-back"><mat-icon  class="text-danger" [routerLink]="['/home']">reply</mat-icon></div>
 <div class="d-flex justify-content-center">
     <form class="form-add-edit" [formGroup]="formHero" (ngSubmit)="submit()">
-        <mat-form-field appearance="fill" class="w-100">
+        <mat-form-field appearance="fill" class="w-100 text--edit">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name" appUppercase>
         </mat-form-field>
-        <mat-form-field appearance="fill" class="w-100">
+        <mat-form-field appearance="fill" class="w-100 text--edit">
             <mat-label>FullName</mat-label>
             <input matInput formControlName="fullName">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="w-100">
+        <mat-form-field appearance="fill" class="w-100 text--edit">
             <mat-label>Ability</mat-label>
             <input matInput formControlName="ability">
         </mat-form-field>
