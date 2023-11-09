@@ -20,15 +20,6 @@
  ::ng-deep .mat-mdc-row {
     color: #7c25aa !important;
  }
- ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
-    background-color: #fff3cd !important;
- }
- ::ng-deep .mat-mdc-dialog-container .mdc-dialog__title {
-    color: rgb(218, 33, 33)!important;
- }
- ::ng-deep .mat-mdc-button:not(:disabled)  {
-    color: rgb(218, 33, 33)!important;
- }
  ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
     border-color: #7c25aa !important;
 }
