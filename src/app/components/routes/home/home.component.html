@@ -1,7 +1,7 @@
 <div class="d-md-flex d-grid justify-content-evenly mt-5 ms-0 me-5">
-    <mat-form-field color="accent" class="color--inputs" >
+    <mat-form-field color="accent" class="color--inputs">
         <mat-label class="text-dark"> 🔍︎ Search name</mat-label>
-        <input class="text-dark" matInput (keyup)="searchHeroName($event)" (search)="searchHeroName($event)" >
+        <input class="text-dark" matInput (keyup)="searchHeroName($event)" (search)="searchHeroName($event)">
     </mat-form-field>
     <form class="d-md-flex d-grid" [formGroup]="searchForm" (ngSubmit)="getHeroId()">
         <mat-form-field appearance="fill">
@@ -11,7 +11,8 @@
                 (click)="searchForm.reset();getAllHeroes()"><mat-icon class="text-dark">close</mat-icon>
             </button>
         </mat-form-field>
-        <button mat-raised-button class="mt-2 ms-md-2 btn bg-warning-subtle text-danger" type="submit">Search Id</button>
+        <button mat-raised-button class="mt-2 ms-md-2 btn bg-warning-subtle text-danger" type="submit">Search
+            Id</button>
     </form>
     <button mat-raised-button class="mt-2 bg-warning-subtle text-danger" [routerLink]="['/hero', 0]">+ Add Hero</button>
 </div>

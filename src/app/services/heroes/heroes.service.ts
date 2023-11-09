@@ -24,7 +24,7 @@ export class HeroesService {
   getHeroName(name: string): Observable<Array<Hero>> {
     return this.getAllHeroes().pipe(map(heroes => {
       if (name) {
-        return heroes.filter(hero => hero.name.toLowerCase().includes(name.toLowerCase()));
+        return heroes.filter(hero => hero.name?.toLowerCase().includes(name.toLowerCase()));
       }
       else
         return heroes
