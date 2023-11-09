@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableDataSourcePaginator } from '@angular/material/table';
@@ -23,7 +23,7 @@ export class HomeComponent {
   dataSource!: MatTableDataSource<Hero, MatTableDataSourcePaginator>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
+  @Output() onHeroDeleted: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private HeroesService: HeroesService, public dialog: MatDialog, private fb: FormBuilder) {
     this.searchForm = this.fb.group({
@@ -33,6 +33,9 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.getAllHeroes();
+    this.onHeroDeleted.subscribe(id => {
+      this.getAllHeroes();
+    });
   }
 
   getAllHeroes() {
@@ -59,7 +62,7 @@ export class HomeComponent {
           console.log(error);
         },
       })
-      : this.getAllHeroes();
+      : this.onHeroDeleted.emit(-1);
   }
 
   getHeroName(name: string) {
@@ -110,12 +113,11 @@ export class HomeComponent {
   deleteHero(id: number) {
     this.HeroesService.delete(id).subscribe({
       next: response => {
-        this.getAllHeroes()
+        this.onHeroDeleted.emit(id);
       },
       error: error => {
         console.log(error);
       },
     })
   }
-
 }
